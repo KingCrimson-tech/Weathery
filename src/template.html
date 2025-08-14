@@ -5,40 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weathery - Smart Weather App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Get real-time weather information, forecasts, and air quality data for any location">
   </head>
   <body>
     <div class="app-container">
-      <h1><i class="fas fa-cloud-sun"></i> Weathery</h1>
-      <div class="container">
-        <form action="#" novalidate>
+      <!-- Background elements -->
+      <div class="bg-decoration"></div>
+      <div class="bg-decoration-2"></div>
+      
+      <header class="app-header">
+        <h1>
+          <i class="fas fa-cloud-sun weather-icon"></i>
+          <span class="app-name">Weathery</span>
+        </h1>
+        <p class="app-subtitle">Your intelligent weather companion</p>
+      </header>
+      
+      <main class="container">
+        <form action="#" novalidate class="search-form">
           <div class="search-box">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="city" placeholder="Search for your city..." autocomplete="off" />
-            <button id="search" type="submit"><i class="fas fa-arrow-right"></i></button>
+            <div class="input-wrapper">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" id="city" placeholder="Search for your city..." autocomplete="off" />
+              <button id="search" type="submit" class="search-btn">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
         </form>
         
-        <div class="location-info">
+        <div class="location-section">
           <button id="getLocation" class="location-btn">
             <i class="fas fa-location-arrow"></i>
-            Use My Location
+            <span>Use My Location</span>
           </button>
-          <span id="locationStatus"></span>
+          <span id="locationStatus" class="location-status"></span>
         </div>
         
-        <div class="info"></div>
+        <div class="info weather-content"></div>
         
-        <button id="toggleUnit" class="unit-toggle">
-          <i class="fas fa-temperature-high"></i>
-          <span>Switch to °F</span>
-        </button>
-      </div>
-      <footer>
-        <a href="https://github.com/KingCrimson-tech/Weathery" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> View on GitHub
+        <div class="controls">
+          <button id="toggleUnit" class="unit-toggle">
+            <i class="fas fa-temperature-high"></i>
+            <span>Switch to °F</span>
+          </button>
+        </div>
+      </main>
+      
+      <footer class="app-footer">
+        <a href="https://github.com/KingCrimson-tech/Weathery" target="_blank" rel="noopener noreferrer" class="github-link">
+          <i class="fab fa-github"></i> 
+          <span>View on GitHub</span>
         </a>
       </footer>
     </div>
+    
+    <script src="script.js"></script>
   </body>
 </html>
