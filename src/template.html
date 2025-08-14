@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weathery</title>
+    <title>Weathery - Smart Weather App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Get real-time weather information, forecasts, and air quality data for any location">
   </head>
   <body>
     <div class="app-container">
@@ -14,10 +15,20 @@
           <div class="search-box">
             <i class="fas fa-search search-icon"></i>
             <input type="text" id="city" placeholder="Search for your city..." autocomplete="off" />
-            <button id="search"><i class="fas fa-arrow-right"></i></button>
+            <button id="search" type="submit"><i class="fas fa-arrow-right"></i></button>
           </div>
         </form>
+        
+        <div class="location-info">
+          <button id="getLocation" class="location-btn">
+            <i class="fas fa-location-arrow"></i>
+            Use My Location
+          </button>
+          <span id="locationStatus"></span>
+        </div>
+        
         <div class="info"></div>
+        
         <button id="toggleUnit" class="unit-toggle">
           <i class="fas fa-temperature-high"></i>
           <span>Switch to °F</span>
