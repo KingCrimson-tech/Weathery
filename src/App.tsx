@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { WeatherData } from '@/types/weather';
 import { weatherService } from '@/services/weatherService';
+import { MOCK_WEATHER_DATA } from '@/data/mockWeatherData';
 import { SearchBar } from '@/components/SearchBar';
 import { WeatherCard } from '@/components/WeatherCard';
 import { Forecast } from '@/components/Forecast';
@@ -9,64 +10,6 @@ import { WeatherSkeleton } from '@/components/WeatherSkeleton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CloudSun, Thermometer, Github, Sparkles } from 'lucide-react';
-
-// Mock data for demo
-const MOCK_WEATHER_DATA: WeatherData = {
-  address: "San Francisco, CA, United States",
-  currentConditions: {
-    temp: 18,
-    feelslike: 16,
-    humidity: 72,
-    windspeed: 15,
-    visibility: 10,
-    uvindex: 5,
-    conditions: "Partly Cloudy",
-    icon: "partly-cloudy-day",
-    aq: 45
-  },
-  days: [
-    {
-      datetime: "2025-12-26",
-      temp: 18,
-      tempmax: 22,
-      tempmin: 14,
-      conditions: "Partly Cloudy",
-      icon: "partly-cloudy-day"
-    },
-    {
-      datetime: "2025-12-27",
-      temp: 20,
-      tempmax: 24,
-      tempmin: 16,
-      conditions: "Sunny",
-      icon: "clear-day"
-    },
-    {
-      datetime: "2025-12-28",
-      temp: 19,
-      tempmax: 23,
-      tempmin: 15,
-      conditions: "Cloudy",
-      icon: "cloudy"
-    },
-    {
-      datetime: "2025-12-29",
-      temp: 17,
-      tempmax: 21,
-      tempmin: 13,
-      conditions: "Rain",
-      icon: "rain"
-    },
-    {
-      datetime: "2025-12-30",
-      temp: 16,
-      tempmax: 20,
-      tempmin: 12,
-      conditions: "Partly Cloudy",
-      icon: "partly-cloudy-day"
-    }
-  ]
-};
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);

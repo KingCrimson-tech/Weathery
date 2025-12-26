@@ -98,3 +98,10 @@ npm run preview
 - **Current Weather**: `/timeline/{location}?unitGroup=metric`
 - **Forecast Data**: Includes 5-day forecast in the same response
 - **Air Quality**: Available in current conditions data
+
+##  Security Note
+This application uses a client-side API key for demonstration purposes. The API key is exposed in the client bundle. For production use, consider:
+- Implementing a backend proxy to keep API keys secure
+- Using API key restrictions (e.g., domain restrictions)
+- Rate limiting to prevent abuse
+- Using a free tier API key with limited quotas

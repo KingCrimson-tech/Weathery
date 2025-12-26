@@ -7,6 +7,10 @@ if (!API_KEY) {
   console.error('Weather API key is not configured. Please set VITE_WEATHER_API_KEY in your .env file.');
 }
 
+// Note: This API key is used on the client-side for demo purposes.
+// In a production environment, consider implementing a backend proxy
+// to keep your API keys secure and avoid exposing them in the client bundle.
+
 export const weatherService = {
   async getWeatherByCity(city: string): Promise<WeatherData> {
     if (!API_KEY) {
