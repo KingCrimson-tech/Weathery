@@ -1,5 +1,5 @@
 # Weathery - Smart Weather App 
-A modern, responsive weather application that provides real-time weather information, forecasts, and air quality data for any location worldwide.
+A modern, responsive weather application built with React, TypeScript, and shadcn/ui that provides real-time weather information, forecasts, and air quality data for any location worldwide.
 
 ##  Features
 ###  **Current Weather**
@@ -32,17 +32,57 @@ A modern, responsive weather application that provides real-time weather informa
 - Smooth animations and transitions
 
 ###  **Modern UI/UX**
+- Built with shadcn/ui components for professional design
 - Beautiful gradient backgrounds
-- Glassmorphism design elements
+- Card-based layout with clean shadows
 - Smooth hover effects and animations
 - Intuitive navigation and user feedback
+- Skeleton loading states
 
 ##  Technologies Used
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Build Tool**: Webpack
+- **Frontend**: React 19, TypeScript
+- **Build Tool**: Vite
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
 - **Weather API**: Visual Crossing Weather API
-- **Icons**: Font Awesome
-- **Styling**: Custom CSS with modern design patterns
+- **Utilities**: class-variance-authority, clsx, tailwind-merge
+
+##  Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm
+
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/KingCrimson-tech/Weathery.git
+cd Weathery
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and visit `http://localhost:5173`
+
+### Build for Production
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+### Preview Production Build
+```bash
+npm run preview
+```
 
 ##  API Endpoints Used
 - **Current Weather**: `/timeline/{location}?unitGroup=metric`
