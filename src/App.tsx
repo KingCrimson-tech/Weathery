@@ -27,7 +27,7 @@ function App() {
       const data = await weatherService.getWeatherByCity(city);
       setWeatherData(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'Failed to fetch weather data. Please try again.');
       setWeatherData(null);
     } finally {
       setIsLoading(false);
@@ -50,7 +50,7 @@ function App() {
       setWeatherData(data);
       setLocationStatus('Weather loaded successfully!');
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Unable to get your location';
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch weather data. Please try again.';
       setError(errorMessage);
       setLocationStatus('Location access failed');
       setWeatherData(null);

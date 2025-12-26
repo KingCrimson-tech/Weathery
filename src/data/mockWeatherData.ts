@@ -67,4 +67,5 @@ function generateMockWeatherData(): WeatherData {
   };
 }
 
+// Generate mock data once on initialization
 export const MOCK_WEATHER_DATA = generateMockWeatherData();
