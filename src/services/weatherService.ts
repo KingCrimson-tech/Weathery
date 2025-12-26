@@ -1,10 +1,18 @@
 import { WeatherData } from '@/types/weather';
 
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || '68D4RCUNCEK9UKMXJ4DF6H56Z';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
+
+if (!API_KEY) {
+  console.error('Weather API key is not configured. Please set VITE_WEATHER_API_KEY in your .env file.');
+}
 
 export const weatherService = {
   async getWeatherByCity(city: string): Promise<WeatherData> {
+    if (!API_KEY) {
+      throw new Error('Weather API key is not configured. Please check your .env file.');
+    }
+
     const response = await fetch(
       `${BASE_URL}/${city}?unitGroup=metric&key=${API_KEY}&include=current,days,hours`
     );
@@ -17,6 +25,10 @@ export const weatherService = {
   },
 
   async getWeatherByCoordinates(latitude: number, longitude: number): Promise<WeatherData> {
+    if (!API_KEY) {
+      throw new Error('Weather API key is not configured. Please check your .env file.');
+    }
+
     const response = await fetch(
       `${BASE_URL}/${latitude},${longitude}?unitGroup=metric&key=${API_KEY}&include=current,days,hours`
     );
