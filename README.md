@@ -52,6 +52,7 @@ A modern, responsive weather application built with React, TypeScript, and shadc
 
 ### Prerequisites
 - Node.js 18+ and npm
+- Visual Crossing Weather API key (free tier available at https://www.visualcrossing.com/)
 
 ### Installation
 1. Clone the repository:
@@ -65,12 +66,21 @@ cd Weathery
 npm install
 ```
 
-3. Start the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
+Then edit `.env` and add your Visual Crossing API key:
+```
+VITE_WEATHER_API_KEY=your_api_key_here
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open your browser and visit `http://localhost:5173`
+5. Open your browser and visit `http://localhost:5173`
 
 ### Build for Production
 ```bash
